@@ -1,78 +1,93 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#14263d">
-<title>My Planner | Differentiated Instruction</title>
+<html lang="ms"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#13283f"><meta name="description" content="Planner pengajaran berasaskan Pembelajaran Terbeza.">
+<link rel="manifest" href="./manifest.webmanifest"><link rel="icon" href="./icons/icon-192.png"><link rel="apple-touch-icon" href="./icons/icon-192.png">
+<title>My Planner DI V1</title>
 <style>
-:root{--navy:#14263d;--teal:#2c8c87;--teal-light:#e1f2ef;--cream:#f7f3e8;--gold:#c8a45d;--ink:#243247;--muted:#687789;--line:#e4e7e5;--white:#fff;--red:#a94442}
-*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5}
-header{background:var(--navy);color:white;padding:24px max(20px,calc((100vw - 1120px)/2));border-bottom:4px solid var(--gold)}
-.brand{display:flex;align-items:center;gap:12px}.mark{width:42px;height:42px;border-radius:12px;background:var(--gold);color:var(--navy);display:grid;place-items:center;font-weight:900;font-size:20px}.eyebrow{text-transform:uppercase;letter-spacing:.15em;font-size:11px;color:#d9c99e;font-weight:700}.brand h1{font-size:24px;margin:0;line-height:1.2}.brand p{margin:4px 0 0;color:#d6e0e9;font-size:13px}
-main{max-width:1120px;margin:26px auto;padding:0 18px 48px}.intro{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:20px}.intro h2{margin:0;color:var(--navy);font-size:25px}.intro p{margin:5px 0 0;color:var(--muted);max-width:680px}.pill{display:inline-flex;align-items:center;gap:7px;background:var(--teal-light);color:#17615e;border-radius:99px;padding:7px 11px;font-size:12px;font-weight:800;white-space:nowrap}
-.layout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.8fr);gap:18px;align-items:start}.panel{background:white;border:1px solid #e8e7df;border-radius:16px;padding:22px;box-shadow:0 5px 20px #14263d0a;margin-bottom:16px}.panel h3{font-size:17px;color:var(--navy);margin:0 0 4px}.sub{font-size:13px;color:var(--muted);margin:0 0 18px}
-label{display:block;font-size:12px;font-weight:800;color:#46576a;margin:0 0 6px}input,select,textarea{width:100%;border:1px solid #d8dfdf;border-radius:9px;padding:11px 12px;font:inherit;font-size:14px;color:var(--ink);background:#fff;outline:none}input:focus,select:focus,textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px #2c8c8718}textarea{min-height:82px;resize:vertical}.field{margin-bottom:14px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.choices{display:flex;flex-wrap:wrap;gap:8px}.choice{border:1px solid #d7e0df;border-radius:10px;background:#fff;color:#415165;padding:9px 12px;font-size:13px;cursor:pointer;font-weight:650}.choice[aria-pressed="true"]{background:var(--teal-light);border-color:var(--teal);color:#145e5a;box-shadow:inset 0 0 0 1px var(--teal)}
-.btnrow{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}.btn{border:0;border-radius:10px;padding:11px 15px;font-weight:800;font-size:13px;cursor:pointer}.primary{background:var(--navy);color:white}.secondary{background:var(--teal-light);color:#145e5a}.gold{background:var(--gold);color:var(--navy)}.outline{background:white;border:1px solid #cbd5d8;color:var(--navy)}.danger{background:#fff0ee;color:var(--red)}
-.mini-stat{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px}.stat{padding:12px;border-radius:12px;background:#f6f8f7}.stat b{display:block;font-size:22px;color:var(--navy)}.stat span{font-size:11px;color:var(--muted)}
-.plan-card{border:1px solid var(--line);border-radius:12px;padding:14px;margin-top:10px}.plan-card h4{margin:0 0 4px;color:var(--navy)}.plan-card p{font-size:12px;color:var(--muted);margin:3px 0}.tag{display:inline-block;font-size:10px;font-weight:800;padding:4px 7px;border-radius:6px;margin:4px 4px 0 0;background:var(--teal-light);color:#17615e}.tag.goldtag{background:#f7efd9;color:#7c5b18}.empty{padding:22px 10px;text-align:center;color:var(--muted);font-size:13px;border:1px dashed #cdd6d5;border-radius:12px}.notice{background:#fff7e5;border-left:3px solid var(--gold);padding:10px 12px;border-radius:7px;color:#6d5729;font-size:12px;margin-top:12px}.hidden{display:none!important}
-footer{text-align:center;color:#718092;font-size:11px;padding:20px;border-top:1px solid #e4e2d8}
-@media(max-width:800px){.layout{grid-template-columns:1fr}.intro{display:block}.pill{margin-top:12px}.panel{padding:17px}}
-@media(max-width:460px){.grid2{grid-template-columns:1fr}.brand h1{font-size:21px}.intro h2{font-size:22px}}
-</style>
-</head>
-<body>
-<header><div class="brand"><div class="mark">DI</div><div><div class="eyebrow">Teacher planning workspace</div><h1>My Planner</h1><p>Differentiated Instruction · Prototype V1</p></div></div></header>
-<main>
-<div class="intro"><div><h2>Plan with purpose.</h2><p>Turn learning evidence into practical teaching actions. Plan, check, group, act and review — all in one simple workspace.</p></div><span class="pill">✦ Designed for teachers</span></div>
-<div class="layout"><section>
-<form id="plannerForm">
-<div class="panel"><h3>01 · Lesson details</h3><p class="sub">Start with the class and learning intention.</p>
-<div class="grid2"><div class="field"><label for="date">Lesson date</label><input id="date" name="date" type="date" required></div><div class="field"><label for="subject">Subject</label><select id="subject" name="subject"><option>English Language</option><option>Bahasa Melayu</option><option>Mathematics</option><option>Science</option><option>Other</option></select></div></div>
-<div class="grid2"><div class="field"><label for="year">Year / class</label><input id="year" name="year" placeholder="e.g. Year 2 Bestari" required></div><div class="field"><label for="duration">Duration</label><select id="duration" name="duration"><option>30 minutes</option><option selected>60 minutes</option><option>90 minutes</option><option>120 minutes</option></select></div></div>
-<div class="field"><label for="topic">Topic / unit</label><input id="topic" name="topic" placeholder="e.g. At the market" required></div>
-<div class="field"><label for="lo">Learning objective / standard</label><textarea id="lo" name="lo" placeholder="What should pupils know or be able to do by the end of the lesson?" required></textarea></div>
-<div class="field"><label for="success">Success criteria</label><textarea id="success" name="success" placeholder="I can… / Pupils can…"></textarea></div></div>
-<div class="panel"><h3>02 · Check learning</h3><p class="sub">Record formative evidence before deciding the next step.</p>
-<div class="field"><label>Assessment method (choose one or more)</label><div class="choices" data-group="assessment"><button type="button" class="choice" aria-pressed="true">Observation</button><button type="button" class="choice" aria-pressed="false">Oral response</button><button type="button" class="choice" aria-pressed="false">Worksheet</button><button type="button" class="choice" aria-pressed="false">Exit ticket</button><button type="button" class="choice" aria-pressed="false">Quiz</button></div></div>
-<div class="field"><label for="evidence">Evidence / what pupils can do</label><textarea id="evidence" name="evidence" placeholder="Record responses, misconceptions or patterns observed."></textarea></div>
-<div class="field"><label for="readiness">Overall class readiness</label><select id="readiness" name="readiness"><option>Mixed readiness</option><option>Most pupils need support</option><option>Most pupils are on track</option><option>Most pupils are ready for extension</option></select></div></div>
-<div class="panel"><h3>03 · Group pupils</h3><p class="sub">Use evidence to select a flexible response, not a fixed label.</p>
-<div class="field"><label>Priority group(s)</label><div class="choices" data-group="groups"><button type="button" class="choice" aria-pressed="true">Reteach</button><button type="button" class="choice" aria-pressed="true">Core practice</button><button type="button" class="choice" aria-pressed="false">Enrich</button></div></div>
-<div class="grid2"><div class="field"><label for="reteach">Reteach focus</label><textarea id="reteach" name="reteach" placeholder="Skill / misconception to revisit"></textarea></div><div class="field"><label for="enrich">Enrichment focus</label><textarea id="enrich" name="enrich" placeholder="Extension / deeper application"></textarea></div></div>
-<div class="field"><label>Support strategy</label><div class="choices" data-group="support"><button type="button" class="choice" aria-pressed="false">Teacher modelling</button><button type="button" class="choice" aria-pressed="false">Visual aids</button><button type="button" class="choice" aria-pressed="false">Peer support</button><button type="button" class="choice" aria-pressed="false">Sentence frames</button><button type="button" class="choice" aria-pressed="false">Hands-on task</button></div></div></div>
-<div class="panel"><h3>04 · Act and review</h3><p class="sub">Choose teaching actions and capture your next step.</p>
-<div class="field"><label for="activity">Main learning activity</label><textarea id="activity" name="activity" placeholder="Describe the task pupils will complete."></textarea></div>
-<div class="field"><label for="resources">Resources</label><input id="resources" name="resources" placeholder="e.g. picture cards, textbook, mini whiteboards"></div>
-<div class="field"><label for="followup">Follow-up / next lesson</label><textarea id="followup" name="followup" placeholder="What will you adjust or check next?"></textarea></div>
-<div class="field"><label for="reflection">Teacher reflection</label><textarea id="reflection" name="reflection" placeholder="What worked? Who needs another check?"></textarea></div>
-<div class="btnrow"><button class="btn primary" type="submit">Save lesson plan</button><button class="btn secondary" type="button" id="previewBtn">Preview plan</button><button class="btn outline" type="reset" id="resetBtn">Clear form</button></div>
-<div class="notice">V1 saves plans in this browser on this device. Export backups regularly. Cloud sync and shared accounts are not included yet.</div></div></form></section>
-<aside><div class="panel"><h3>Your planning overview</h3><p class="sub">Saved lesson plans on this device.</p><div class="mini-stat"><div class="stat"><b id="totalCount">0</b><span>Saved plans</span></div><div class="stat"><b id="reteachCount">0</b><span>Reteach plans</span></div><div class="stat"><b id="enrichCount">0</b><span>Enrich plans</span></div></div>
-<div class="btnrow" style="margin-top:0"><button class="btn secondary" id="exportBtn" type="button">Export backup</button><button class="btn outline" id="importBtn" type="button">Import backup</button><input id="importFile" type="file" accept="application/json,.json" class="hidden"></div><div id="preview" class="hidden"></div></div>
-<div class="panel"><h3>Saved lesson plans</h3><p class="sub">Select a plan to edit or remove it.</p><div id="savedList" class="empty">No saved plans yet. Complete the lesson form and select Save lesson plan.</div></div>
-<div class="panel"><h3>Planning cycle</h3><div class="plan-card"><h4>Plan → Check → Group → Act → Review</h4><p>Start with a learning objective, collect formative evidence, respond with flexible groups, choose differentiated actions and record the next step.</p><span class="tag">Reteach</span><span class="tag">Core practice</span><span class="tag goldtag">Enrich</span></div></div>
-</aside></div></main>
-<footer>My Planner · DI Planner V1 · Teacher planning prototype. Keep pupil information anonymous.</footer>
+:root{--navy:#13283f;--teal:#237f7a;--cream:#f7f2e6;--gold:#d6ad55;--ink:#203244;--muted:#637282;--line:#e4dfd2;--white:#fffdf8}*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.45 system-ui,-apple-system,sans-serif}header{background:var(--navy);color:white;padding:22px max(18px,calc((100% - 1120px)/2));border-bottom:5px solid var(--gold)}h1{margin:0;font-size:clamp(1.6rem,4vw,2.2rem)}header p{margin:6px 0 0;color:#dce5ec}main{max-width:1120px;margin:24px auto;padding:0 16px 48px}.intro{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:16px}.tag{background:#dcefeb;color:#165c59;border-radius:999px;padding:6px 12px;font-weight:700;font-size:.82rem}.layout{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(280px,.7fr);gap:18px}.card{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 4px 16px #13283f0b}h2{font-size:1.18rem;color:var(--navy);margin:0 0 16px}h3{font-size:1rem;color:var(--teal);margin:18px 0 8px}label{display:block;font-weight:650;font-size:.88rem;margin:12px 0 5px}input,select,textarea{width:100%;padding:11px 12px;border:1px solid #cbd3d4;border-radius:10px;background:white;color:var(--ink);font:inherit}textarea{min-height:78px;resize:vertical}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}button{border:0;border-radius:10px;padding:10px 14px;font:inherit;font-weight:700;cursor:pointer}.primary{background:var(--teal);color:white}.secondary{background:#e7efed;color:#185f5b}.gold{background:var(--gold);color:#30270e}.danger{background:#f8e5df;color:#8d3324}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.group{border-left:4px solid var(--teal);padding:2px 0 2px 12px;margin:12px 0}.group:nth-of-type(2){border-color:#9b7b32}.group:nth-of-type(3){border-color:#7765a6}.small{font-size:.84rem;color:var(--muted)}.lesson{padding:14px;border:1px solid var(--line);border-radius:12px;margin-top:10px}.lesson strong{display:block;color:var(--navy);margin-bottom:4px}.lesson p{margin:4px 0;white-space:pre-wrap}.lesson-actions{display:flex;gap:8px;margin-top:10px}.empty{border:1px dashed #bcc6c7;padding:20px;text-align:center;border-radius:12px;color:var(--muted)}.install-note{background:#edf5f2;border:1px solid #c6e0d9;border-radius:12px;padding:12px;margin-top:14px}footer{text-align:center;padding:18px;color:var(--muted);font-size:.82rem}@media(max-width:760px){.layout{grid-template-columns:1fr}.formgrid{grid-template-columns:1fr}main{margin-top:16px}.card{padding:16px}}
+</style></head><body>
+<header><h1>My Planner <span style="color:var(--gold)">DI</span> V1</h1><p>Planner pengajaran berasaskan Pembelajaran Terbeza</p></header><main>
+<div class="intro"><div><strong>Rancang dengan jelas. Bezakan dengan bermakna.</strong><div class="small">Prototaip planner pengajaran untuk guru sekolah rendah</div></div><span class="tag">NAVY · TEAL · CREAM · GOLD</span></div>
+<section class="card" style="margin-bottom:18px"><h2>Pasang My Planner pada peranti</h2><p class="small">Pasang aplikasi pada skrin utama untuk membukanya seperti aplikasi biasa.</p><div class="actions"><button class="primary" id="installBtn" type="button" hidden>Pasang aplikasi</button><button class="secondary" id="iosHelpBtn" type="button">Panduan iPhone / iPad</button><button class="secondary" id="androidHelpBtn" type="button">Panduan Android</button></div><div class="install-note small" id="installHelp" aria-live="polite">Pemasangan memerlukan aplikasi dihoskan melalui HTTPS, contohnya Cloudflare Pages.</div></section>
+<div class="layout"><section class="card"><h2 id="formTitle">Rancangan Pengajaran</h2><form id="plannerForm"><input id="editId" type="hidden"><div class="formgrid"><div><label for="date">Tarikh</label><input id="date" type="date"></div><div><label for="subject">Subjek</label><input id="subject" required placeholder="Contoh: Bahasa Inggeris"></div><div><label for="year">Tahun / Kelas</label><input id="year" required placeholder="Contoh: Tahun 2 Bestari"></div><div><label for="duration">Tempoh</label><input id="duration" placeholder="Contoh: 60 minit"></div></div>
+<label for="theme">Theme / Tema</label>
+<select id="theme">
+<option value="">Pilih tema</option>
+<option>At School</option><option>My Family and Friends</option><option>Our World</option>
+<option>Food and Health</option><option>Animals</option><option>Hobbies and Activities</option>
+<option>Places and Directions</option><option>Time and Daily Routines</option><option>Clothes and Weather</option>
+<option>Celebrations</option><option>Transport</option><option>Custom Theme</option>
+</select>
+<label for="topic">Topik / Unit</label><input id="topic" required placeholder="Pilih tema atau masukkan topik">
+<div class="small">Tema boleh dipilih daripada senarai atau diubah suai. LO cadangan akan dijana untuk Bahasa Inggeris Tahun 2.</div><label for="loPreset">Cadangan Learning Outcome</label>
+<select id="loPreset">
+<option value="">Pilih kemahiran untuk cadangan LO</option>
+<option value="listening">Listening</option><option value="speaking">Speaking</option>
+<option value="reading">Reading</option><option value="writing">Writing</option>
+<option value="language">Language Arts / Vocabulary</option><option value="custom">Custom / Other</option>
+</select>
+<label for="lo">Learning Outcome / Objective (boleh diedit)</label><textarea id="lo" placeholder="Cadangan LO akan muncul selepas tema dan kemahiran dipilih. Semak dan sesuaikan dengan DSKP/RPT sebelum digunakan."></textarea><label for="success">Success Criteria</label><textarea id="success" placeholder="Murid berjaya apabila mereka dapat..."></textarea><label for="assessment">Pentaksiran formatif</label><select id="assessment"><option value="">Pilih kaedah</option><option>Soal jawab</option><option>Exit ticket</option><option>Mini whiteboard</option><option>Pemerhatian guru</option><option>Latihan bertulis</option><option>Rakan semak</option></select>
+<h3>Aktiviti Terbeza Mengikut Kesediaan</h3><div class="group"><label for="reteach">RETEACH · Perlukan bimbingan</label><textarea id="reteach" placeholder="Langkah kecil, model, visual, bimbingan guru..."></textarea></div><div class="group"><label for="core">CORE PRACTICE · Sedang menguasai</label><textarea id="core" placeholder="Latihan terarah untuk mencapai LO..."></textarea></div><div class="group"><label for="enrich">ENRICH · Bersedia untuk cabaran</label><textarea id="enrich" placeholder="Aplikasi, peluasan atau tugasan aras tinggi..."></textarea></div>
+<label for="support">Sokongan / Scaffolding</label><textarea id="support" placeholder="Word bank, sentence starters, visual, peer support"></textarea><label for="resources">Bahan / Sumber</label><textarea id="resources" placeholder="Buku teks, kad gambar, lembaran kerja..."></textarea><label for="reflection">Refleksi selepas pengajaran</label><textarea id="reflection" placeholder="Apa yang berjaya? Siapa perlukan tindakan susulan?"></textarea><div class="actions"><button class="primary" type="submit">Simpan Rancangan</button><button class="secondary" type="button" id="resetBtn">Rancangan Baharu</button><button class="gold" type="button" id="exportBtn">Eksport JSON</button></div></form></section>
+<aside class="card"><h2>Rancangan Tersimpan</h2><p class="small">Data disimpan dalam pelayar pada peranti semasa. Eksport JSON untuk sandaran.</p><div class="actions"><button class="secondary" id="importBtn" type="button">Import JSON</button><input id="importFile" type="file" accept="application/json,.json" hidden></div><div id="savedList" aria-live="polite"></div><div class="actions"><button class="danger" id="clearBtn" type="button">Padam Semua</button></div></aside></div></main>
+<footer>My Planner DI V1 · Prototaip awal · Data belum disegerakkan ke pangkalan data awan</footer>
 <script>
-(()=>{'use strict';
-const KEY='myPlannerDI_v1',form=document.getElementById('plannerForm'),date=document.getElementById('date');
-date.value=new Date().toISOString().slice(0,10);let plans=load(),editingId=null;
-function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch{return []}}
-function persist(){try{localStorage.setItem(KEY,JSON.stringify(plans));render()}catch{alert('Could not save in this browser. Export your plans and check available storage.')}}
-function selected(group){return [...document.querySelectorAll('[data-group="'+group+'"] .choice[aria-pressed="true"]')].map(b=>b.textContent.trim())}
-document.querySelectorAll('[data-group]').forEach(w=>w.addEventListener('click',e=>{const b=e.target.closest('.choice');if(b)b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!=='true'?'true':'false')}));
-function collect(){const d=Object.fromEntries(new FormData(form).entries());for(const g of ['assessment','groups','support'])d[g]=selected(g);return d}
-function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function showPreview(p){const box=document.getElementById('preview');box.classList.remove('hidden');box.innerHTML='<div class="plan-card"><h4>'+esc(p.topic||'Untitled lesson')+'</h4><p>'+esc(p.date)+' · '+esc(p.subject)+' · '+esc(p.year)+'</p><p><b>Learning objective:</b> '+esc(p.lo)+'</p><p><b>Evidence:</b> '+esc(p.evidence||'Not recorded')+'</p><p><b>Groups:</b> '+esc((p.groups||[]).join(', ')||'None selected')+'</p><p><b>Activity:</b> '+esc(p.activity||'Not recorded')+'</p></div>'}
-form.addEventListener('submit',e=>{e.preventDefault();const p=collect();if(!p.topic||!p.year||!p.lo){alert('Please complete class, topic and learning objective.');return}if(editingId){const i=plans.findIndex(x=>x.id===editingId);if(i>=0)plans[i]={...plans[i],...p,updatedAt:new Date().toISOString()};editingId=null}else plans.unshift({id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),...p,createdAt:new Date().toISOString()});persist();showPreview(plans[0]);alert('Lesson plan saved on this device.')});
-document.getElementById('previewBtn').addEventListener('click',()=>showPreview(collect()));
-document.getElementById('resetBtn').addEventListener('click',()=>{editingId=null;setTimeout(()=>{document.querySelectorAll('[data-group="assessment"] .choice').forEach((b,i)=>b.setAttribute('aria-pressed',i===0?'true':'false'));document.querySelectorAll('[data-group="groups"] .choice').forEach((b,i)=>b.setAttribute('aria-pressed',i<2?'true':'false'));document.querySelectorAll('[data-group="support"] .choice').forEach(b=>b.setAttribute('aria-pressed','false'))},0)});
-function render(){document.getElementById('totalCount').textContent=plans.length;document.getElementById('reteachCount').textContent=plans.filter(p=>(p.groups||[]).includes('Reteach')).length;document.getElementById('enrichCount').textContent=plans.filter(p=>(p.groups||[]).includes('Enrich')).length;const list=document.getElementById('savedList');if(!plans.length){list.className='empty';list.textContent='No saved plans yet. Complete the lesson form and select Save lesson plan.';return}list.className='';list.innerHTML=plans.map(p=>'<div class="plan-card"><h4>'+esc(p.topic||'Untitled lesson')+'</h4><p>'+esc(p.date)+' · '+esc(p.year)+'</p><p>'+esc(p.lo||'No objective added')+'</p>'+((p.groups||[]).map(g=>'<span class="tag '+(g==='Enrich'?'goldtag':'')+'">'+esc(g)+'</span>').join(''))+'<div class="btnrow"><button type="button" class="btn secondary" data-edit="'+esc(p.id)+'">Edit</button><button type="button" class="btn danger" data-delete="'+esc(p.id)+'">Delete</button></div></div>').join('')}
-document.getElementById('savedList').addEventListener('click',e=>{const eb=e.target.closest('[data-edit]'),db=e.target.closest('[data-delete]');if(eb){const p=plans.find(x=>x.id===eb.dataset.edit);if(!p)return;editingId=p.id;for(const [k,v] of Object.entries(p)){const el=form.elements.namedItem(k);if(el&&typeof v==='string')el.value=v}['assessment','groups','support'].forEach(g=>{const chosen=p[g]||[];document.querySelectorAll('[data-group="'+g+'"] .choice').forEach(b=>b.setAttribute('aria-pressed',chosen.includes(b.textContent.trim())?'true':'false'))});window.scrollTo({top:0,behavior:'smooth'});return}if(db&&confirm('Delete this lesson plan?')){plans=plans.filter(p=>p.id!==db.dataset.delete);persist()}});
-document.getElementById('exportBtn').addEventListener('click',()=>{const blob=new Blob([JSON.stringify({app:'My Planner DI V1',exportedAt:new Date().toISOString(),plans},null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='my-planner-backup.json';a.click();URL.revokeObjectURL(a.href)});
-document.getElementById('importBtn').addEventListener('click',()=>document.getElementById('importFile').click());
-document.getElementById('importFile').addEventListener('change',async e=>{const f=e.target.files[0];if(!f)return;try{const parsed=JSON.parse(await f.text()),incoming=Array.isArray(parsed)?parsed:parsed.plans;if(!Array.isArray(incoming))throw Error('Invalid backup');if(!confirm('Import '+incoming.length+' plans? Existing plans with matching IDs will be replaced.'))return;const map=new Map(plans.map(p=>[p.id,p]));incoming.forEach((p,i)=>map.set(p.id||('import-'+Date.now()+'-'+i),p));plans=[...map.values()];persist();alert('Backup imported.')}catch{alert('Could not import this file. Choose a My Planner JSON backup.')}e.target.value=''});
-render();
-})();
+const KEY='my-planner-di-v1',fields=['date','subject','year','duration','theme','topic','lo','success','assessment','reteach','core','enrich','support','resources','reflection'];const $=id=>document.getElementById(id);let plans=load(),deferredPrompt=null;
+function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch{return []}}function persist(){localStorage.setItem(KEY,JSON.stringify(plans));render()}function collect(){let p={id:$('editId').value||String(Date.now())};fields.forEach(k=>p[k]=$(k).value.trim());return p}function reset(){$('plannerForm').reset();$('editId').value='';$('formTitle').textContent='Rancangan Pengajaran'}function esc(v){return String(v||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function render(){$('savedList').innerHTML=plans.length?plans.map(p=>'<div class="lesson"><strong>'+esc(p.topic||'Tanpa tajuk')+'</strong><div class="small">'+esc(p.date||'Tarikh belum ditetapkan')+' · '+esc(p.subject)+' · '+esc(p.year)+(p.theme?' · Tema: '+esc(p.theme):'')+'</div><p>'+esc(p.lo)+'</p><p class="small">Reteach: '+esc(p.reteach||'Belum diisi')+'</p><p class="small">Core: '+esc(p.core||'Belum diisi')+'</p><p class="small">Enrich: '+esc(p.enrich||'Belum diisi')+'</p><div class="lesson-actions"><button class="secondary" data-edit="'+esc(p.id)+'">Edit</button><button class="danger" data-del="'+esc(p.id)+'">Padam</button></div></div>').join(''):'<div class="empty">Belum ada rancangan. Isi borang dan tekan “Simpan Rancangan”.</div>'}
+$('plannerForm').addEventListener('submit',e=>{e.preventDefault();const p=collect(),i=plans.findIndex(x=>x.id===p.id);if(i>=0)plans[i]=p;else plans.unshift(p);persist();reset()});$('resetBtn').addEventListener('click',reset);
+$('savedList').addEventListener('click',e=>{if(e.target.dataset.edit){const p=plans.find(x=>x.id===e.target.dataset.edit);if(p){fields.forEach(k=>$(k).value=p[k]||'');$('editId').value=p.id;$('formTitle').textContent='Edit Rancangan';scrollTo({top:0,behavior:'smooth'})}}if(e.target.dataset.del&&confirm('Padam rancangan ini?')){plans=plans.filter(p=>p.id!==e.target.dataset.del);persist()}});
+$('exportBtn').addEventListener('click',()=>{const b=new Blob([JSON.stringify({app:'My Planner DI V1',plans},null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='my-planner-di-backup.json';a.click();URL.revokeObjectURL(a.href)});$('importBtn').addEventListener('click',()=>$('importFile').click());
+$('importFile').addEventListener('change',async e=>{try{const d=JSON.parse(await e.target.files[0].text()),arr=Array.isArray(d)?d:d.plans;if(!Array.isArray(arr))throw Error();const m=new Map(plans.map(p=>[p.id,p]));arr.forEach(p=>{if(p&&p.id)m.set(String(p.id),p)});plans=[...m.values()];persist();alert('Import selesai')}catch{alert('Fail JSON tidak sah')}e.target.value=''});$('clearBtn').addEventListener('click',()=>{if(confirm('Padam semua rancangan pada peranti ini?')){plans=[];persist()}});
+const help=$('installHelp'),installBtn=$('installBtn');window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;installBtn.hidden=false});installBtn.addEventListener('click',async()=>{if(!deferredPrompt){help.textContent='Prompt pemasangan tidak tersedia. Gunakan panduan mengikut peranti.';return}deferredPrompt.prompt();const choice=await deferredPrompt.userChoice;help.textContent=choice.outcome==='accepted'?'Permintaan pemasangan diterima.':'Pemasangan belum diteruskan.';deferredPrompt=null;installBtn.hidden=true});window.addEventListener('appinstalled',()=>{help.textContent='My Planner telah dipasang pada peranti ini.';installBtn.hidden=true});
+$('iosHelpBtn').addEventListener('click',()=>{help.textContent='iPhone/iPad: buka laman ini dalam Safari → Share (ikon anak panah ke atas) → Add to Home Screen / Tambah ke Skrin Utama → Add.'});$('androidHelpBtn').addEventListener('click',()=>{help.textContent='Android: buka laman ini dalam Chrome → menu ⋮ → Install app / Pasang aplikasi atau Add to Home screen → ikut arahan.'});
+const themeSelect=$('theme'),topicInput=$('topic'),loPreset=$('loPreset');
+const themeTopics={
+'At School':'Classroom objects, classroom instructions, school routines',
+'My Family and Friends':'Family members, describing people, friendship',
+'Our World':'Places, nature, countries and the environment',
+'Food and Health':'Food vocabulary, likes and dislikes, healthy habits',
+'Animals':'Animal names, descriptions and abilities',
+'Hobbies and Activities':'Hobbies, sports and free-time activities',
+'Places and Directions':'Places in town, location and simple directions',
+'Time and Daily Routines':'Daily routines, days, time and frequency',
+'Clothes and Weather':'Clothes, weather and seasonal descriptions',
+'Celebrations':'Celebrations, greetings and simple descriptions',
+'Transport':'Means of transport and getting around',
+'Custom Theme':''
+};
+const loSuggestions={
+listening:'By the end of the lesson, pupils can identify key information in short, simple spoken texts related to the selected theme.',
+speaking:'By the end of the lesson, pupils can use simple words and phrases to describe or talk about the selected theme.',
+reading:'By the end of the lesson, pupils can identify key words and understand simple sentences related to the selected theme.',
+writing:'By the end of the lesson, pupils can write words or simple sentences related to the selected theme using a model or word bank where needed.',
+language:'By the end of the lesson, pupils can recognise and use target vocabulary or a simple language pattern related to the selected theme.',
+custom:''
+};
+function suggestLO(){
+ const subject=$('subject').value.trim().toLowerCase(),year=$('year').value.trim().toLowerCase(),theme=themeSelect.value,topic=topicInput.value.trim(),skill=loPreset.value;
+ if(!skill||skill==='custom')return;
+ const target=topic||theme||'the selected theme';
+ let sentence=loSuggestions[skill].replaceAll('the selected theme',target);
+ if(subject.includes('english')||subject.includes('inggeris')||subject==='bi'){
+   if(year.includes('2')||year.includes('dua')) sentence += ' (Suggested draft for Year 2; verify against the current DSKP and RPT.)';
+ } else {
+   sentence= 'By the end of the lesson, pupils can demonstrate the selected '+skill+' skill in relation to '+target+'. Adapt this draft to the subject curriculum and learning standard.';
+ }
+ $('lo').value=sentence;
+}
+themeSelect.addEventListener('change',()=>{
+ const t=themeSelect.value;
+ if(t && t!=='Custom Theme' && (!topicInput.value.trim() || Object.values(themeTopics).includes(topicInput.value.trim()))) topicInput.value=themeTopics[t]||t;
+ else if(t==='Custom Theme' && !topicInput.value.trim()) topicInput.value='';
+ suggestLO();
+});
+loPreset.addEventListener('change',suggestLO);
+topicInput.addEventListener('change',suggestLO);
+$('subject').addEventListener('change',suggestLO);
+$('year').addEventListener('change',suggestLO);
+const originalReset=reset;
+reset=function(){originalReset();themeSelect.value='';loPreset.value='';};
+if('serviceWorker'in navigator&&location.protocol!=='file:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{help.textContent='Planner boleh digunakan, tetapi cache luar talian tidak dapat diaktifkan.'}))}render();
 </script></body></html>

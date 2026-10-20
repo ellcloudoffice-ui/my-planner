@@ -1,32 +1,26 @@
-# My Planner — DI Planner V1
+# My Planner DI V1 — PWA
 
-A responsive, browser-based prototype for planning differentiated instruction lessons.
+## Fail
+- `index.html`: planner dan panduan pemasangan.
+- `manifest.webmanifest`: metadata Progressive Web App.
+- `sw.js`: service worker dan cache app shell asas.
+- `icons/`: ikon 192px, 512px dan maskable.
+- `README.md`: panduan ini.
 
-## Run it
-1. Download and unzip this project.
-2. Open `index.html` in a modern browser.
-3. Fill in the lesson details and select **Save lesson plan**.
+## Push ke GitHub
+1. Ekstrak ZIP.
+2. Muat naik fail dan folder di dalam ZIP ke root repo `ellcloudoffice-ui/my-planner`. Pastikan `index.html` berada terus di root.
+3. Commit dan push ke branch `main`.
+4. Tunggu deployment Cloudflare Pages berjaya.
+5. Buka domain HTTPS dan uji pemasangan pada iOS dan Android.
 
-No build step or external library is required.
+## Pemasangan
+- iPhone/iPad: buka laman HTTPS dalam Safari → Share → Add to Home Screen.
+- Android: buka laman HTTPS dalam Chrome → menu ⋮ → Install app atau Add to Home screen. Prompt bergantung pada sokongan browser.
+- Service worker dan pemasangan PWA memerlukan HTTPS; `file://` tidak mencukupi.
 
-## V1 features
-- Lesson date, subject, class, duration, topic and learning objective
-- Success criteria and formative assessment evidence
-- Selectable assessment methods, flexible groups (Reteach / Core practice / Enrich) and support strategies
-- Activity, resources, follow-up and teacher reflection
-- Save, edit, delete and preview lesson plans
-- JSON export/import backup
-- Responsive navy, teal, cream and gold design
+## Had prototaip
+Planner menyimpan rekod dalam `localStorage` setempat, bukan pangkalan data awan. Rekod tidak disegerakkan antara peranti. Service worker cache app shell asas sahaja. Uji pada Safari iOS dan Chrome Android sebelum penggunaan umum.
 
-## Data and limitations
-This prototype stores data in the browser's `localStorage` on the current device/browser. It does **not** yet sync across devices, provide user accounts, or use a cloud database. Clearing browser site data may remove saved plans, so export backups regularly. Avoid entering identifiable pupil data.
-
-## GitHub setup
-1. Open https://github.com/ellcloudoffice-ui/my-planner
-2. Choose **Add file → Upload files**.
-3. Upload `index.html` and `README.md` from this folder (or upload the ZIP after extracting it locally).
-4. Commit to `main`.
-5. Optional preview: repository **Settings → Pages**, choose deploy from branch `main` and folder `/ (root)`, then save. GitHub Pages availability and settings may vary.
-
-## Next version
-Move persistence to a secure cloud database (for example, Supabase or Firebase), add authentication and access rules, then add printable lesson plans and a separate digital user manual. Test with anonymised sample data before classroom use.
+## Auto-suggest Theme dan Learning Outcome
+Pilih Theme, kemudian pilih kemahiran (Listening, Speaking, Reading, Writing atau Language Arts/Vocabulary) untuk mengisi draf LO secara automatik. LO ialah cadangan umum yang boleh diedit, bukan salinan rasmi DSKP. Semak dengan DSKP dan RPT semasa sebelum menggunakannya. Untuk tema/topik lain, pilih Custom Theme dan edit medan yang berkaitan.
